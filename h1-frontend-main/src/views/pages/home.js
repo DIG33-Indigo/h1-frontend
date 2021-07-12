@@ -28,41 +28,50 @@ class HomeView {
           
         </div>
 
-        <!-- section 2 popular tours -->
-        <div id = "home-poptour-section">
-          <h1 id ="pop-h1">Popular Top Deck Tours:</h1>
+       <!-- section 2 popular tours -->
+<div id = "home-poptour-section">
+  <h1 id ="pop-h1">Popular Top Deck Tours:</h1>
 
-            <div class ="glider-contain multiple">
-              <!--slide in and out element-->
-              <div class = "glider">
-                <figure>
-                  <div id = "bali-adventure" class = "slide">
-                  <div class = "slider-txt">
-                  <h3>Bali Adventurer</h3>
-                    <h4>9 Nights | Departs Denpasser</h4>
-                    <div class = "slider-item"  id = "adv-slide">
-                    <span >#Adventure</span>
-                  </div>
-                </div>
-              </figure>
-
-            
-              <figure>
-                <div id = "med-reset" class = "slide">
-                  <div class = "slider-txt">
-                  <h3>Mediterranean Reset</h3>
-                    <h4>5 Nights | Departs Athens</h4>
-                    <div class = "slider-item" id = "chill-slide">
-                    <span>#Chill</span>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-              </figure>   
-              </div>
-              
-              <div id ="dots" class ="glider-dots"></div>
+    <div class ="glider-contain multiple">
+      <!--slide in and out element-->
+      <div class = "glider">
+        <figure>
+          <div id = "bali-adventure" class = "slide">
+          <div class = "slider-txt">
+          <h3>Bali Adventurer</h3>
+            <h4>9 Nights | Departs Denpasser</h4>
+            <div class = "slider-item"  id = "adv-slide">
+            <span >#Adventure</span>
           </div>
+        </div>
+      </figure>
+
+     
+      <figure>
+        <div id = "med-reset" class = "slide">
+          <div class = "slider-txt">
+          <h3>Mediterranean Reset</h3>
+            <h4>5 Nights | Departs Athens</h4>
+            <div class = "slider-item" id = "chill-slide">
+            <span>#Chill</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </figure>   
+      </div>
+       <!-- placeholder dots for now-->
+    <div id = "dots">
+      <sl-icon name = "circle"></sl-icon>
+      <sl-icon name = "circle"></sl-icon>
+      <sl-icon name = "circle"></sl-icon>
+      <sl-icon name = "circle"></sl-icon>
+      <sl-icon name = "circle"></sl-icon>
+    <!-- other slider divs go below -->
+  </div>
+
+</div>
+
           
         </div>
       </body>

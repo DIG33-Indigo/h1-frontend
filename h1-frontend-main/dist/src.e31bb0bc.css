@@ -5,6 +5,7 @@
   --base-txt-color: #222;
   --heading-color: #333;
   --base-font-family: "Open Sans", "Times New Roman", Times, serif;
+  --headings-font-family: "Roboto Condensed", "Open Sans";
   --body-bg: #fff;
   --brand-color: #222C39;
   --link-color: --brand-color;
@@ -92,6 +93,9 @@ a {
 #home-poptour-section {
   height: 100vh;
   background-color: #FFF;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #pop-h1 {
@@ -104,6 +108,8 @@ a {
 
 #med-reset,
 #bali-adventure {
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   height: 50vh;
   width: 75vh;
@@ -132,16 +138,21 @@ a {
 }
 
 .slider-txt h3 {
+  color: #FFF;
+  margin: 0 0 0em;
   font-size: 7vh;
   margin-left: 3vh;
 }
 
 .slider-txt h4 {
   font-size: 5vh;
+  font-weight: lighter;
+  font-family: var(--headings-font-family);
   margin-left: 3vh;
 }
 
 .slider-txt span {
+  font-family: var(--headings-font-family);
   font-size: 3vh;
   font-weight: lighter;
 }
@@ -166,6 +177,12 @@ a {
   position: relative;
 }
 
+#dots {
+  text-align: center;
+  color: #222C39;
+  margin-bottom: 11vh;
+}
+
 /*GLIDER STYLES 
 --------------------------*/
 figure {
@@ -175,9 +192,16 @@ figure {
 }
 
 .glider-contain {
-  width: 85% !important;
+  width: 100% !important;
   margin-top: 1%;
-  bottom: 1%;
+  margin: auto;
+}
+
+.glider {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
 }
 
 .app-splash {

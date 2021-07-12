@@ -6,7 +6,7 @@ const authRequired = ["/admin", "/editprofile", "/userDashboard"]
 
 class App {
   constructor(){
-    this.name = "Haircuts"
+    this.name = "Topdeck"
     this.version = "1.0.0"
     this.apiBase = 'https://topdeck-indigo.herokuapp.com'
     this.rootEl = document.getElementById("root")
