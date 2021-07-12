@@ -37,11 +37,12 @@ footer{
   position: fixed;
   width: 100%;
   bottom: 0;
+  font-family: 'Roboto Condensed', 'Open Sans';   
 }
 
 #home-footer{
     background-color: #222C39;
-    height: 75vh;
+    height: 70vh;
     display: flex;
     justify-content: space-around;
 }
@@ -58,17 +59,18 @@ footer{
     text-align: left !important;
     color: #FFF;
     /*space btwn text lines*/
-    line-height: 7vh;
+    line-height: 4vh;
 }
 
 /*style of text in footer*/
 .footer-items h1{
     font-weight:bold;
-    font-size: 6vh;
+    font-size: 6vh; 
 }
 
 .footer-items h2{
     font-size: 5vh;
+    font-weight: lighter;
 }
 
 #footer-column-right{
@@ -83,7 +85,7 @@ footer{
 }
 
 #footer-column-right sl-icon{
-    font-size: 8vh;
+    font-size: 10vh;
     margin: 1vh;
 }
 
