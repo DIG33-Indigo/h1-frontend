@@ -103,7 +103,7 @@ a {
   font-size: 10vh;
   font-weight: bold;
   color: #222C39;
-  padding-bottom: 6vh;
+  padding-bottom: 1vh;
 }
 
 #med-reset,
@@ -180,7 +180,7 @@ a {
 #dots {
   text-align: center;
   color: #222C39;
-  margin-bottom: 11vh;
+  margin-top: 5vh;
 }
 
 /*GLIDER STYLES 

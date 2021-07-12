@@ -39,7 +39,7 @@ class HomeView {
           <div id = "bali-adventure" class = "slide">
           <div class = "slider-txt">
           <h3>Bali Adventurer</h3>
-            <h4>9 Nights | Departs Denpasser</h4>
+            <h4>9 Nights | Departs Denpaser</h4>
             <div class = "slider-item"  id = "adv-slide">
             <span >#Adventure</span>
           </div>
