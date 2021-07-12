@@ -72,20 +72,28 @@ class HomeView {
       <!-- other slider divs go below -->
     </div>
 
-      <!-- Section 3 travellers feedback-->
+    <!-- Section 3 travellers feedback-->
     <div id = "home-feedback-section">
-    <div id = "feedback-sm-container">
-    <div id = "feedback-box">
-      <h1>What are our <span class = "highlight">travellers</span> saying?</h1>
-    </div>
+      <div id = "feedback-sm-container">
+        <div id = "feedback-box">
+            <h1>What are our <span class = "highlight">travellers</span> saying?</h1>
+        </div>
     <!--vertical line-->
     <div id="vert-line"></div>
-    <div id = "feedback-box">
-     <h2><i>"I had the time of my life on the Eastern Europe Party Tour."</i></h2>
-      <img src = "images/5-stars.png" alt = "5 stars filled in yellow">
-    </div>
-  </div>
+        <div id = "feedback-box">
+          <h2><i>"I had the time of my life on the Eastern Europe Party Tour."</i></h2>
+          <img src = "images/5-stars.png" alt = "5 stars filled in yellow">
+        </div>
+      </div>
   </div><!--close feedback div -->
+
+  <!-- section 4 quiz section -->
+  <div id = "home-quiz-section">
+    <div id = "quiz-h1-box">
+      <h1>Find out your travel style</h1>
+      <div id = "btn-outline" >Take the Quiz</div>
+    </div>
+  </div><!--close home quiz section div-->
 
 
           

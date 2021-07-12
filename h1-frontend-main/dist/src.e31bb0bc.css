@@ -256,6 +256,49 @@ figure {
   margin-right: auto;
 }
 
+/*section 4 Quiz Section 
+--------------------------*/
+#home-quiz-section {
+  height: 100vh;
+  background-image: url("/Home-Man-By-Train.e235c88a.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#quiz-h1-box {
+  padding-top: 30vh;
+  width: 100vh;
+  display: flex;
+  /*justify-content: flex-end;*/
+  flex-direction: column;
+  margin-left: auto;
+}
+
+#home-quiz-section h1 {
+  font-size: 18vh;
+  font-weight: bolder;
+  text-align: center;
+  text-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+/*take the quiz button*/
+#btn-outline {
+  width: 30vh !important;
+  border-radius: 3px;
+  border: 2px solid #FFF;
+  color: #FFF;
+  border-color: #FFF;
+  text-align: center;
+  margin: auto;
+  padding: 3vh;
+  font-size: 3vh;
+}
+
+#quiz-btn:hover {
+  cursor: pointer;
+}
+
 .app-splash {
   position: fixed;
   background: #fff;
