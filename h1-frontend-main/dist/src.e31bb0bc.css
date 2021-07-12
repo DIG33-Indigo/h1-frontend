@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,500;1,100;1,200;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto+Condensed:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto+Condensed:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Roboto+Condensed:wght@300;400&display=swap");
 :root {
   --base-txt-color: #222;
   --heading-color: #333;
-  --base-font-family: "Work Sans", sans-serif;
+  --base-font-family: "Open Sans", "Times New Roman", Times, serif;
   --body-bg: #fff;
   --brand-color: #222C39;
   --link-color: --brand-color;
@@ -25,6 +27,8 @@
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  margin: 0;
+  padding: 0;
 }
 
 .view-screen {
@@ -37,7 +41,7 @@ body {
   padding: 0;
   margin: 0;
   color: var(--base-txt-color);
-  font-family: var(--base-font-family);
+  font-family: "Open Sans", "Times New Roman", Times, serif;
   font-weight: 300;
   background: var(--body-bg);
 }
@@ -45,21 +49,13 @@ body {
 h1, h2, h3, h5, h6 {
   margin: 0 0 0.5em;
   color: var(--heading-color);
-}
-
-* {
-  margin: 0;
-  padding: 0;
+  font-family: "Roboto Condensed", "Open Sans";
+  font-weight: 300;
 }
 
 body {
   font-family: "Open Sans", "Times New Roman", Times, serif;
   font-weight: 700;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: "Roboto Condensed", "Open Sans";
-  font-weight: 300;
 }
 
 #home-hero-section {
