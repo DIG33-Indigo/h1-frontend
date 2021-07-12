@@ -384,7 +384,6 @@ figure {
   right: 0;
   bottom: 0;
   overflow-y: scroll;
-  padding: 1em;
 }
 .page-content.no-pad {
   padding: 0;

@@ -33,9 +33,16 @@ customElements.define('td-site-footer', class SiteFooter extends LitElement {
       
 /*section - footer
 --------------------------*/
+footer{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+ 
+}
+
 #home-footer{
     background-color: #222C39;
-    height: 60vh;
+    height: 75vh;
     display: flex;
     justify-content: space-around;
 }
