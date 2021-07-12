@@ -1,0 +1,107 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "html", function () {
+  return html;
+});
+_parcelHelpers.export(exports, "svg", function () {
+  return svg;
+});
+_parcelHelpers.export(exports, "DefaultTemplateProcessor", function () {
+  return _libDefaultTemplateProcessorJs.DefaultTemplateProcessor;
+});
+_parcelHelpers.export(exports, "defaultTemplateProcessor", function () {
+  return _libDefaultTemplateProcessorJs.defaultTemplateProcessor;
+});
+_parcelHelpers.export(exports, "directive", function () {
+  return _libDirectiveJs.directive;
+});
+_parcelHelpers.export(exports, "isDirective", function () {
+  return _libDirectiveJs.isDirective;
+});
+_parcelHelpers.export(exports, "removeNodes", function () {
+  return _libDomJs.removeNodes;
+});
+_parcelHelpers.export(exports, "reparentNodes", function () {
+  return _libDomJs.reparentNodes;
+});
+_parcelHelpers.export(exports, "noChange", function () {
+  return _libPartJs.noChange;
+});
+_parcelHelpers.export(exports, "nothing", function () {
+  return _libPartJs.nothing;
+});
+_parcelHelpers.export(exports, "AttributeCommitter", function () {
+  return _libPartsJs.AttributeCommitter;
+});
+_parcelHelpers.export(exports, "AttributePart", function () {
+  return _libPartsJs.AttributePart;
+});
+_parcelHelpers.export(exports, "BooleanAttributePart", function () {
+  return _libPartsJs.BooleanAttributePart;
+});
+_parcelHelpers.export(exports, "EventPart", function () {
+  return _libPartsJs.EventPart;
+});
+_parcelHelpers.export(exports, "isIterable", function () {
+  return _libPartsJs.isIterable;
+});
+_parcelHelpers.export(exports, "isPrimitive", function () {
+  return _libPartsJs.isPrimitive;
+});
+_parcelHelpers.export(exports, "NodePart", function () {
+  return _libPartsJs.NodePart;
+});
+_parcelHelpers.export(exports, "PropertyCommitter", function () {
+  return _libPartsJs.PropertyCommitter;
+});
+_parcelHelpers.export(exports, "PropertyPart", function () {
+  return _libPartsJs.PropertyPart;
+});
+_parcelHelpers.export(exports, "parts", function () {
+  return _libRenderJs.parts;
+});
+_parcelHelpers.export(exports, "render", function () {
+  return _libRenderJs.render;
+});
+_parcelHelpers.export(exports, "templateCaches", function () {
+  return _libTemplateFactoryJs.templateCaches;
+});
+_parcelHelpers.export(exports, "templateFactory", function () {
+  return _libTemplateFactoryJs.templateFactory;
+});
+_parcelHelpers.export(exports, "TemplateInstance", function () {
+  return _libTemplateInstanceJs.TemplateInstance;
+});
+_parcelHelpers.export(exports, "SVGTemplateResult", function () {
+  return _libTemplateResultJs.SVGTemplateResult;
+});
+_parcelHelpers.export(exports, "TemplateResult", function () {
+  return _libTemplateResultJs.TemplateResult;
+});
+_parcelHelpers.export(exports, "createMarker", function () {
+  return _libTemplateJs.createMarker;
+});
+_parcelHelpers.export(exports, "isTemplatePartActive", function () {
+  return _libTemplateJs.isTemplatePartActive;
+});
+_parcelHelpers.export(exports, "Template", function () {
+  return _libTemplateJs.Template;
+});
+var _libDefaultTemplateProcessorJs = require('./lib/default-template-processor.js');
+var _libTemplateResultJs = require('./lib/template-result.js');
+var _libDirectiveJs = require('./lib/directive.js');
+var _libDomJs = require('./lib/dom.js');
+var _libPartJs = require('./lib/part.js');
+var _libPartsJs = require('./lib/parts.js');
+var _libRenderJs = require('./lib/render.js');
+var _libTemplateFactoryJs = require('./lib/template-factory.js');
+var _libTemplateInstanceJs = require('./lib/template-instance.js');
+var _libTemplateJs = require('./lib/template.js');
+// IMPORTANT: do not change the property name or the assignment expression.
+// This line will be used in regexes to search for lit-html usage.
+// TODO(justinfagnani): inject version number at build time
+if (typeof window !== 'undefined') {
+  (window['litHtmlVersions'] || (window['litHtmlVersions'] = [])).push('1.4.1');
+}
+const html = (strings, ...values) => new _libTemplateResultJs.TemplateResult(strings, values, 'html', _libDefaultTemplateProcessorJs.defaultTemplateProcessor);
+const svg = (strings, ...values) => new _libTemplateResultJs.SVGTemplateResult(strings, values, 'svg', _libDefaultTemplateProcessorJs.defaultTemplateProcessor);

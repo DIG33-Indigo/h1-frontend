@@ -1,0 +1,82 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _App = require('./../../App');
+var _AppDefault = _parcelHelpers.interopDefault(_App);
+var _litHtml = require('lit-html');
+require('./../../Router');
+var _Auth = require('./../../Auth');
+var _AuthDefault = _parcelHelpers.interopDefault(_Auth);
+var _Utils = require('./../../Utils');
+var _UtilsDefault = _parcelHelpers.interopDefault(_Utils);
+class HomeView {
+  init() {
+    console.log('HomeView.init');
+    document.title = 'Home';
+    this.render();
+    _UtilsDefault.default.pageIntroAnim();
+  }
+  render() {
+    const template = _litHtml.html`
+      <td-app-header title="Home" user=${JSON.stringify(_AuthDefault.default.currentUser)}></td-app-header>
+      <div class="view-screen">
+      <body>
+        <div id = "home-container">
+        <!-- section 1 Hero image -->
+          <div id = "home-hero-section">
+            <div id = "home-hero-text">
+              <h3>Group Tours for 18 - 30 Somethings</h3>
+              <h1>Good Vibes & Safe Travels</h1>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- section 2 popular tours -->
+        <div id = "home-poptour-section">
+          <h1 id ="pop-h1">Popular Top Deck Tours:</h1>
+
+            <div class ="glider-contain multiple">
+              <!--slide in and out element-->
+              <div class = "glider">
+                <figure>
+                  <div id = "bali-adventure" class = "slide">
+                  <div class = "slider-txt">
+                  <h3>Bali Adventurer</h3>
+                    <h4>9 Nights | Departs Denpasser</h4>
+                    <div class = "slider-item"  id = "adv-slide">
+                    <span >#Adventure</span>
+                  </div>
+                </div>
+              </figure>
+
+            
+              <figure>
+                <div id = "med-reset" class = "slide">
+                  <div class = "slider-txt">
+                  <h3>Mediterranean Reset</h3>
+                    <h4>5 Nights | Departs Athens</h4>
+                    <div class = "slider-item" id = "chill-slide">
+                    <span>#Chill</span>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </figure>   
+              </div>
+              
+              <div id ="dots" class ="glider-dots"></div>
+          </div>
+          
+        </div>
+      </body>
+      <td-site-footer></td-site-footer>
+      </div>
+
+
+
+      
+    `;
+    _litHtml.render(template, _AppDefault.default.rootEl);
+  }
+}
+exports.default = new HomeView();

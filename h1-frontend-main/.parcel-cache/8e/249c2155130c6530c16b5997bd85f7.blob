@@ -1,0 +1,26 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "isCEPolyfill", function () {
+  return isCEPolyfill;
+});
+_parcelHelpers.export(exports, "reparentNodes", function () {
+  return reparentNodes;
+});
+_parcelHelpers.export(exports, "removeNodes", function () {
+  return removeNodes;
+});
+const isCEPolyfill = typeof window !== 'undefined' && window.customElements != null && window.customElements.polyfillWrapFlushCallback !== undefined;
+const reparentNodes = (container, start, end = null, before = null) => {
+  while (start !== end) {
+    const n = start.nextSibling;
+    container.insertBefore(start, before);
+    start = n;
+  }
+};
+const removeNodes = (container, start, end = null) => {
+  while (start !== end) {
+    const n = start.nextSibling;
+    container.removeChild(start);
+    start = n;
+  }
+};

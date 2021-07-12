@@ -1,0 +1,28 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _gsap = require('gsap');
+var _gsapDefault = _parcelHelpers.interopDefault(_gsap);
+class Utils {
+  isMobile() {
+    let viewportWidth = window.innerWidth;
+    if (viewportWidth <= 768) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  pageIntroAnim() {
+    const pageContent = document.querySelector('.page-content');
+    if (!pageContent) return;
+    _gsapDefault.default.fromTo(pageContent, {
+      opacity: 0,
+      y: -12
+    }, {
+      opacity: 1,
+      y: 0,
+      ease: 'power2.out',
+      duration: 0.3
+    });
+  }
+}
+exports.default = new Utils();

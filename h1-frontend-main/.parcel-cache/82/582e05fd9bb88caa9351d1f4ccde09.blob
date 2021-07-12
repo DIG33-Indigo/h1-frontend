@@ -1,0 +1,33 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _App = require('../../App');
+var _AppDefault = _parcelHelpers.interopDefault(_App);
+var _litHtml = require('lit-html');
+require('../../Router');
+var _Utils = require('../../Utils');
+var _UtilsDefault = _parcelHelpers.interopDefault(_Utils);
+var _Auth = require('../../Auth');
+var _AuthDefault = _parcelHelpers.interopDefault(_Auth);
+class FindusView {
+  init() {
+    console.log('FindusView.init');
+    document.title = 'Find Us';
+    this.render();
+    _UtilsDefault.default.pageIntroAnim();
+  }
+  render() {
+    const template = _litHtml.html`
+     <td-app-header title="Find Us" user=${JSON.stringify(_AuthDefault.default.currentUser)}></td-app-header>
+      <div class="page-content">
+      
+       
+        <h3>Find Us content goes here</h3>
+        
+        <td-site-footer></td-site-footer>
+      </div>
+      
+    `;
+    _litHtml.render(template, _AppDefault.default.rootEl);
+  }
+}
+exports.default = new FindusView();

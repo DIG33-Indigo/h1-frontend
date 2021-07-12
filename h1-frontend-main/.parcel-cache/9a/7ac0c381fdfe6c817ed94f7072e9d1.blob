@@ -1,0 +1,60 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _App = require('./../../App');
+var _AppDefault = _parcelHelpers.interopDefault(_App);
+var _Auth = require('./../../Auth');
+var _AuthDefault = _parcelHelpers.interopDefault(_Auth);
+var _litHtml = require('lit-html');
+var _Router = require('./../../Router');
+var _Utils = require('./../../Utils');
+var _UtilsDefault = _parcelHelpers.interopDefault(_Utils);
+class SignUpView {
+  init() {
+    console.log('SignUpView.init');
+    document.title = 'Sign In';
+    this.render();
+    _UtilsDefault.default.pageIntroAnim();
+  }
+  signUpSubmitHandler(e) {
+    e.preventDefault();
+    const submitBtn = document.querySelector('.submit-btn');
+    submitBtn.setAttribute('loading', '');
+    const formData = e.detail.formData;
+    // sign up using Auth
+    _AuthDefault.default.signUp(formData, () => {
+      submitBtn.removeAttribute('loading');
+    });
+  }
+  render() {
+    const template = _litHtml.html`      
+              <td-app-header title="Sign up" user="${JSON.stringify(_AuthDefault.default.currentUser)}"></td-app-header>
+
+      <div class="page-content page-centered">      
+        <div class="signinup-box">
+        <img class="signinup-logo" src="/images/logo.svg">
+          <h1>Sign Up</h1>
+          <sl-form class="form-signup" @sl-submit=${this.signUpSubmitHandler}>
+            <div class="input-group">
+              <sl-input name="firstName" type="text" placeholder="First Name" required></sl-input>
+            </div>
+            <div class="input-group">
+              <sl-input name="lastName" type="text" placeholder="Last Name" required></sl-input>
+            </div>
+            <div class="input-group">
+              <sl-input name="email" type="email" placeholder="Email" required></sl-input>
+            </div>
+            <div class="input-group">
+              <sl-input name="password" type="password" placeholder="Password" required toggle-password></sl-input>
+            </div> 
+            
+
+            <sl-button type="primary" class="submit-btn" submit style="width: 100%;">Sign Up</sl-button>
+          </sl-form>
+          <p>Have an account? <a href="/signin" @click=${_Router.anchorRoute}>Sign In</a></p>
+        </div>
+      </div>
+    `;
+    _litHtml.render(template, _AppDefault.default.rootEl);
+  }
+}
+exports.default = new SignUpView();

@@ -1,0 +1,54 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _App = require('./../../App');
+var _AppDefault = _parcelHelpers.interopDefault(_App);
+var _litHtml = require('lit-html');
+var _Router = require('./../../Router');
+var _Auth = require('./../../Auth');
+var _AuthDefault = _parcelHelpers.interopDefault(_Auth);
+var _Utils = require('./../../Utils');
+var _UtilsDefault = _parcelHelpers.interopDefault(_Utils);
+var _moment = require('moment');
+var _momentDefault = _parcelHelpers.interopDefault(_moment);
+class ProfileView {
+  init() {
+    console.log('ProfileView.init');
+    document.title = 'Profile';
+    this.render();
+    _UtilsDefault.default.pageIntroAnim();
+  }
+  render() {
+    const template = _litHtml.html`
+    <style>
+      h1 {
+        color: black;
+
+      }
+    </style>
+      <td-app-header title="Profile" user="${JSON.stringify(_AuthDefault.default.currentUser)}"></td-app-header>
+      <div class="page-content calign">  
+
+          ${_AuthDefault.default.currentUser && _AuthDefault.default.currentUser.avatar ? _litHtml.html`
+            <sl-avatar style="--size: 200px; margin-bottom: 1em;" image=${_AuthDefault.default.currentUser && _AuthDefault.default.currentUser.avatar ? `${_AppDefault.default.apiBase}/images/${_AuthDefault.default.currentUser.avatar}` : ''}></sl-avatar>
+          ` : _litHtml.html`
+          <sl-avatar style="--size: 200px; margin-bottom: 1em;"></sl-avatar>
+          `}
+          <h2>${_AuthDefault.default.currentUser.firstName} ${_AuthDefault.default.currentUser.lastName}</h2>
+          <p>${_AuthDefault.default.currentUser.email}</p>
+          
+          <p>Updated: ${_momentDefault.default(_AuthDefault.default.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a')}</p>
+
+          ${_AuthDefault.default.currentUser.bio ? _litHtml.html`
+          <h3>About Me</h3>
+          <p>${_AuthDefault.default.currentUser.bio}</p>
+          ` : _litHtml.html`
+          <p>No news about me.</p>
+          `}
+          <sl-button @click=${() => _Router.gotoRoute('/editProfile')}>Edit Profile</sl-button>
+
+      </div>      
+    `;
+    _litHtml.render(template, _AppDefault.default.rootEl);
+  }
+}
+exports.default = new ProfileView();

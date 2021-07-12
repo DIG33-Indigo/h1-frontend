@@ -1,0 +1,30 @@
+{
+  "name": "h1-frontend",
+  "version": "1.0.0",
+  "description": "top deck app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "prod": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@polymer/lit-element": "^0.7.1",
+    "gsap": "^3.7.0",
+    "lit-element": "^2.5.1",
+    "lit-html": "^1.4.1",
+    "moment": "^2.29.1",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "sass": "^1.35.1",
+    "scss": "^0.2.4"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "parcel-bundler": "^1.12.5"
+  },
+  "browserslist": [
+    "since 2017-06"
+  ]
+}

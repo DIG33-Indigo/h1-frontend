@@ -1,0 +1,78 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _App = require('../../App');
+var _AppDefault = _parcelHelpers.interopDefault(_App);
+var _litHtml = require('lit-html');
+var _Router = require('../../Router');
+var _Utils = require('../../Utils');
+var _UtilsDefault = _parcelHelpers.interopDefault(_Utils);
+var _Auth = require('./../../Auth');
+var _AuthDefault = _parcelHelpers.interopDefault(_Auth);
+var _moment = require('moment');
+var _momentDefault = _parcelHelpers.interopDefault(_moment);
+class UserDashboardView {
+  init() {
+    console.log('UserDashboardView.init');
+    document.title = 'Me & My Trips';
+    this.render();
+    _UtilsDefault.default.pageIntroAnim();
+  }
+  /*profile code section --------------------------------------------*/
+  render() {
+    const template = _litHtml.html`
+      <style>
+        h3 {
+          text-align: centre;
+        }
+
+      </style>
+
+
+
+
+     <td-app-header title="My & My Trips" user=${JSON.stringify(_AuthDefault.default.currentUser)}></td-app-header>
+      <div class="page-content">
+      
+       
+        <h3>User Daashboard</h3>
+
+
+        <sl-tab-group>
+          <sl-tab slot="nav" panel="next">My Next Trip</sl-tab>
+          <sl-tab slot="nav" panel="chat">Tour Chat</sl-tab>
+          <sl-tab slot="nav" panel="favourites">Favourites</sl-tab>
+          <sl-tab slot="nav" panel="profile">Profile</sl-tab>
+
+          <sl-tab-panel name="next">Get package by booking id here</sl-tab-panel>
+          <sl-tab-panel name="chat">Chat Forum code to go here</sl-tab-panel>
+          <sl-tab-panel name="favourites">Get package by favourite ids here</sl-tab-panel>
+          <sl-tab-panel name="profile">
+            <div class="signinup-box">
+               ${_AuthDefault.default.currentUser && _AuthDefault.default.currentUser.avatar ? _litHtml.html`
+                <sl-avatar style="--size: 200px; margin-bottom: 1em;" image=${_AuthDefault.default.currentUser && _AuthDefault.default.currentUser.avatar ? `${_AppDefault.default.apiBase}/images/${_AuthDefault.default.currentUser.avatar}` : ''}></sl-avatar>
+              ` : _litHtml.html`
+                <sl-avatar style="--size: 200px; margin-bottom: 1em;"></sl-avatar>
+              `}
+              <h2>${_AuthDefault.default.currentUser.firstName} ${_AuthDefault.default.currentUser.lastName}</h2>
+              <p>${_AuthDefault.default.currentUser.email}</p>
+              ${_AuthDefault.default.currentUser.bio ? _litHtml.html`
+                <h3>About Me</h3>
+                <p>${_AuthDefault.default.currentUser.bio}</p>
+              ` : _litHtml.html`
+                <p>No news about me.</p><br>
+              `}
+              <p>Updated: ${_momentDefault.default(_AuthDefault.default.currentUser.updatedAt).format('MMMM Do YYYY, @ h:mm a')}</p>
+              <sl-button @click=${() => _Router.gotoRoute('/editProfile')}>Edit Profile</sl-button>
+              </div>         
+            </div>
+            
+          </sl-tab-panel>
+        </sl-tab-group>
+
+      </div>
+      
+    `;
+    _litHtml.render(template, _AppDefault.default.rootEl);
+  }
+}
+exports.default = new UserDashboardView();

@@ -1,0 +1,55 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _App = require('../../App');
+var _AppDefault = _parcelHelpers.interopDefault(_App);
+var _litHtml = require('lit-html');
+require('../../Router');
+var _Utils = require('../../Utils');
+var _UtilsDefault = _parcelHelpers.interopDefault(_Utils);
+var _Auth = require('../../Auth');
+var _AuthDefault = _parcelHelpers.interopDefault(_Auth);
+class AdminView {
+  init() {
+    console.log('AdminView.init');
+    document.title = 'Admin';
+    this.render();
+    _UtilsDefault.default.pageIntroAnim();
+  }
+  render() {
+    const template = _litHtml.html`
+     <td-app-header title="Admin" user=${JSON.stringify(_AuthDefault.default.currentUser)}></td-app-header>
+      <div class="page-content">
+      
+       
+        <h3>Admin content goes here</h3>
+        admin button only shown on drop down menu to those with level 2 access.
+
+
+
+          <sl-tab-group>
+            <sl-tab slot="nav" panel="add">Add New Tour Package</sl-tab>
+            <sl-tab slot="nav" panel="edit">Edit Tour Packages</sl-tab>
+            
+
+            <sl-tab-panel name="edit">
+              If there is time : )
+              <p>Get all packages and show an edit button</p>
+              <p>Then get package id and open the edit package in the new window and update by id</p>
+              <p>Need to create a new page with getbyID and updatebyID functions</p>
+            </sl-tab-panel>
+
+            <sl-tab-panel name="add">Insert form here with submit button</sl-tab-panel>
+            
+          </sl-tab-group>
+        
+
+
+
+        <td-site-footer></td-site-footer>
+      </div>
+      
+    `;
+    _litHtml.render(template, _AppDefault.default.rootEl);
+  }
+}
+exports.default = new AdminView();

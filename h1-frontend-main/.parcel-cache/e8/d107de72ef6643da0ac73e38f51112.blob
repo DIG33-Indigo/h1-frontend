@@ -1,0 +1,24 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "parts", function () {
+  return parts;
+});
+_parcelHelpers.export(exports, "render", function () {
+  return render;
+});
+var _domJs = require('./dom.js');
+var _partsJs = require('./parts.js');
+var _templateFactoryJs = require('./template-factory.js');
+const parts = new WeakMap();
+const render = (result, container, options) => {
+  let part = parts.get(container);
+  if (part === undefined) {
+    _domJs.removeNodes(container, container.firstChild);
+    parts.set(container, part = new _partsJs.NodePart(Object.assign({
+      templateFactory: _templateFactoryJs.templateFactory
+    }, options)));
+    part.appendInto(container);
+  }
+  part.setValue(result);
+  part.commit();
+};

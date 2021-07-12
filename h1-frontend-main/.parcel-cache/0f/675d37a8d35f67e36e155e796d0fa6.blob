@@ -1,0 +1,117 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _App = require('./App');
+var _AppDefault = _parcelHelpers.interopDefault(_App);
+var _Router = require('./Router');
+var _RouterDefault = _parcelHelpers.interopDefault(_Router);
+var _viewsPartialsSplash = require('./views/partials/splash');
+var _viewsPartialsSplashDefault = _parcelHelpers.interopDefault(_viewsPartialsSplash);
+var _litHtml = require('lit-html');
+var _Toast = require('./Toast');
+var _ToastDefault = _parcelHelpers.interopDefault(_Toast);
+class Auth {
+  constructor() {
+    this.currentUser = {};
+  }
+  async signUp(userData, fail = false) {
+    const response = await fetch(`${_AppDefault.default.apiBase}/user`, {
+      method: 'POST',
+      body: userData
+    });
+    // if response not ok
+    if (!response.ok) {
+      // console log error
+      const err = await response.json();
+      if (err) console.log(err);
+      // show error
+      _ToastDefault.default.show(`Problem getting user: ${response.status}`);
+      // run fail() functon if set
+      if (typeof fail == 'function') fail();
+    }
+    // / sign up success - show toast and redirect to sign in page
+    _ToastDefault.default.show('Account created, please sign in');
+    // redirect to signin
+    _Router.gotoRoute('/signin');
+  }
+  async signIn(userData, fail = false) {
+    const response = await fetch(`${_AppDefault.default.apiBase}/auth/signin`, {
+      method: 'POST',
+      body: userData
+    });
+    // if response not ok
+    if (!response.ok) {
+      // console log error
+      const err = await response.json();
+      if (err) console.log(err);
+      // show error
+      _ToastDefault.default.show(`Problem signing in: ${err.message}`, 'error');
+      // run fail() functon if set
+      if (typeof fail == 'function') fail();
+    }
+    // sign in success
+    const data = await response.json();
+    _ToastDefault.default.show(`Welcome  ${data.user.firstName}`);
+    // save access token (jwt) to local storage
+    localStorage.setItem('accessToken', data.accessToken);
+    // set current user
+    this.currentUser = data.user;
+    // console.log(this.currentUser)
+    // redirect to home
+    // if the user is a new user direct to guide page - otherwise home page
+    if (data.user.newUser == true) {
+      _Router.gotoRoute('/guide');
+    } else {
+      _Router.gotoRoute('/');
+    }
+  }
+  async check(success) {
+    // show splash screen while loading ...
+    _litHtml.render(_viewsPartialsSplashDefault.default, _AppDefault.default.rootEl);
+    // check local token is there
+    if (!localStorage.accessToken) {
+      // no local token!
+      // Toast.show("Please sign in")
+      // redirect to sign in page
+      _RouterDefault.default.init();
+      return;
+    }
+    // token must exist - validate token via the backend
+    const response = await fetch(`${_AppDefault.default.apiBase}/auth/validate`, {
+      method: 'GET',
+      headers: {
+        "Authorization": `Bearer ${localStorage.accessToken}`
+      }
+    });
+    // if response not ok
+    if (!response.ok) {
+      // console log error
+      const err = await response.json();
+      if (err) console.log(err);
+      // delete local token
+      localStorage.removeItem('accessToken');
+      // Toast.show("session expired, please sign in")
+      // redirect to sign in
+      // gotoRoute('/signin')
+      _RouterDefault.default.init();
+      return;
+    }
+    // token is valid!
+    const data = await response.json();
+    // console.log(data)
+    // set currentUser obj
+    this.currentUser = data.user;
+    // run success
+    success();
+    _RouterDefault.default.init();
+  }
+  signOut() {
+    _ToastDefault.default.show("You are signed out");
+    // delete local token
+    localStorage.removeItem('accessToken');
+    // redirect to sign in
+    _Router.gotoRoute('/signin');
+    // unset currentUser
+    this.currentUser = null;
+  }
+}
+exports.default = new Auth();

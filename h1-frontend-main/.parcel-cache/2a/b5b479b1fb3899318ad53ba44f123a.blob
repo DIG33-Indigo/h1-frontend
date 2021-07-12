@@ -1,0 +1,47 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _App = require('../../App');
+var _AppDefault = _parcelHelpers.interopDefault(_App);
+var _litHtml = require('lit-html');
+var _Router = require('./../../Router');
+var _Auth = require('./../../Auth');
+var _AuthDefault = _parcelHelpers.interopDefault(_Auth);
+var _Utils = require('./../../Utils');
+var _UtilsDefault = _parcelHelpers.interopDefault(_Utils);
+var _UserAPI = require('./../../UserAPI');
+var _UserAPIDefault = _parcelHelpers.interopDefault(_UserAPI);
+var _Toast = require('../../Toast');
+var _ToastDefault = _parcelHelpers.interopDefault(_Toast);
+class GuideView {
+  init() {
+    document.title = 'Guide';
+    this.render();
+    _UtilsDefault.default.pageIntroAnim();
+    this.updateCurrentUser();
+  }
+  async updateCurrentUser() {
+    try {
+      const updatedUser = await _UserAPIDefault.default.updateUser(_AuthDefault.default.currentUser._id, {
+        newUser: false
+      }, 'json');
+      console.log('user updated');
+      console.log(updatedUser);
+    } catch (err) {
+      _ToastDefault.default.show(err, 'error');
+    }
+  }
+  render() {
+    const template = _litHtml.html`
+      <td-app-header title="Guide" user="${JSON.stringify(_AuthDefault.default.currentUser)}"></td-app-header>
+      <div class="page-content calign">        
+        
+        Some intro information
+
+        <sl-button type="primary" @click=${() => _Router.gotoRoute('/')}>Okay got it!</sl-button>
+        
+      </div>      
+    `;
+    _litHtml.render(template, _AppDefault.default.rootEl);
+  }
+}
+exports.default = new GuideView();

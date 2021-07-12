@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,500;1,100;1,200;1,500&display=swap");
+:root {
+  --base-txt-color: #222;
+  --heading-color: #333;
+  --base-font-family: "Work Sans", sans-serif;
+  --body-bg: #fff;
+  --brand-color: #222C39;
+  --link-color: --brand-color;
+  --app-header-height: 14vh;
+  --app-header-txt-color: #000;
+  --app-header-title-font-size: 1.6em;
+  --sl-color-primary-50: #f4f4f4;
+  --sl-color-primary-100: #7890af;
+  --sl-color-primary-200: #5b7699;
+  --sl-color-primary-300: #485d79;
+  --sl-color-primary-400: #354559;
+  --sl-color-primary-500: #222C39;
+  --sl-color-primary-600: #0f1319;
+  --sl-color-primary-700: black;
+  --sl-color-primary-800: black;
+  --sl-color-primary-900: black;
+  --sl-focus-ring-color-primary: rgba(34, 44, 57, 0.1);
+}
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+.view-screen {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+}
+body {
+  padding: 0;
+  margin: 0;
+  color: var(--base-txt-color);
+  font-family: var(--base-font-family);
+  font-weight: 300;
+  background: var(--body-bg);
+}
+h1, h2, h3, h5, h6 {
+  margin: 0 0 0.5em;
+  color: var(--heading-color);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Open Sans", "Times New Roman", Times, serif;
+  font-weight: 700;
+}
+h1, h2, h3, h4, h5 {
+  font-family: "Roboto Condensed", "Open Sans";
+  font-weight: 300;
+}
+#home-hero-section {
+  background-image: url("HOME-1.HASH_REF_8526404c5383043157b457fba8cc0b20.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+#home-hero-text h3, h1 {
+  text-align: center;
+  font-weight: normal;
+  color: #FFF;
+}
+#home-hero-text {
+  position: relative;
+  padding-top: 45vh;
+}
+#home-hero-text h3 {
+  font-size: 6vh;
+  padding-bottom: 2.8vh;
+  text-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+#home-hero-text h1 {
+  font-size: 16vh;
+  text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+a {
+  color: var(--link-color);
+}
+/*section 2 Top Deck Tours 
+--------------------------*/
+#home-poptour-section {
+  height: 100vh;
+  background-color: #FFF;
+}
+#pop-h1 {
+  padding-top: 10vh;
+  font-size: 10vh;
+  font-weight: bold;
+  color: #222C39;
+  padding-bottom: 6vh;
+}
+#med-reset,
+#bali-adventure {
+  background-size: cover;
+  height: 50vh;
+  width: 75vh;
+  border-radius: 10px;
+  color: #FFF;
+  position: relative;
+}
+#bali-adventure {
+  background-image: url("HOME-Popular-Bali.HASH_REF_7af4df46c2650407c98158d37380c80f.jpg");
+}
+#med-reset {
+  background-image: url("HOME-Popular-Med.HASH_REF_ff6b4fb68b9c4d0492de506b94fd298e.jpg");
+}
+.slider-txt {
+  text-align: left;
+  /*positions at bottom of container*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(58, 57, 57, 0.274);
+  border-radius: 0px 0px 10px 10px;
+}
+.slider-txt h3 {
+  font-size: 7vh;
+  margin-left: 3vh;
+}
+.slider-txt h4 {
+  font-size: 5vh;
+  margin-left: 3vh;
+}
+.slider-txt span {
+  font-size: 3vh;
+  font-weight: lighter;
+}
+#adv-slide {
+  background-color: #F0C6D8;
+}
+#chill-slide {
+  background-color: #F9DE7E;
+}
+/*styles the small div below the image with the #*/
+.slider-item {
+  border-radius: 10px;
+  text-align: center;
+  width: 28vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  left: 2.5vh;
+  bottom: -2vh;
+  position: relative;
+}
+/*GLIDER STYLES 
+--------------------------*/
+figure {
+  display: block;
+  margin: 1em;
+  padding: 0.7em;
+}
+.glider-contain {
+  width: 85% !important;
+  margin-top: 1%;
+  bottom: 1%;
+}
+.app-splash {
+  position: fixed;
+  background: #fff;
+  color: #777;
+  display: flex;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.app-splash .app-logo {
+  width: 180px;
+  display: block;
+  margin-bottom: 1em;
+}
+.calign {
+  text-align: center;
+}
+.large-text {
+  font-size: 1.6em;
+}
+.brand-color {
+  color: var(--brand-color);
+}
+.generic-entry {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.07);
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+  padding: 1em;
+  background: #fff;
+}
+#root {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+.page-content {
+  position: absolute;
+  top: var(--app-header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  padding: 1em;
+}
+.page-content.no-pad {
+  padding: 0;
+}
+.page-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signinup-box,
+.signup-box {
+  max-width: 320px;
+  text-align: center;
+}
+.signinup-box h1,
+.signup-box h1 {
+  color: black;
+}
+.signinup-logo {
+  width: 200px;
+  margin-bottom: 1em;
+}
+.guide-step {
+  padding: 1em;
+  margin: 1.5em auto;
+  max-width: 600px;
+}
+.guide-step img {
+  width: 100%;
+  height: auto;
+}
+.packages-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.packages-grid .package-card {
+  width: calc(33.3% - 1em);
+  margin: 0.5em;
+}
+.package-dialog {
+  --width: 70%;
+}
+.package-dialog::part(body) {
+  margin-top: -3em;
+}
+@media all and (max-width: 768px) {
+  .signinup-box {
+    width: 90%;
+    max-width: none;
+  }
+}
+.input-group {
+  margin-bottom: 0.5em;
+}
+.page-form {
+  max-width: 700px;
+}
+sl-dialog::part(title) {
+  font-weight: 500;
+  font-size: 1.6em;
+}
+@media all and (max-width: 768px) {
+  sl-dialog::part(panel) {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    max-width: none;
+  }
+}
+#toasts {
+  position: fixed;
+  left: 50%;
+  top: 1em;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.toast-entry {
+  background: #fff;
+  margin: 0 auto;
+  color: #333;
+  border-radius: 200px;
+  box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.14);
+  padding: 0.7em 1.3em;
+  font-size: 1em;
+  margin-bottom: 0.25em;
+  text-align: center;
+  transition: all 0.2 ease;
+}
+.toast-entry.is-error {
+  background: #d4195d;
+  color: #fff;
+}
+/*# sourceMappingURL=index.HASH_REF_39a0fc20ddc371e313c84f99a85de4b6.css.map */

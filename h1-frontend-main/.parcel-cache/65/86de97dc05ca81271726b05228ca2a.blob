@@ -1,0 +1,11 @@
+var _AppJs = require('./App.js');
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _AppJsDefault = _parcelHelpers.interopDefault(_AppJs);
+require('./components/td-app-header');
+require('./components/td-packages');
+require('./components/td-site-footer');
+require('./scss/master.scss');
+// app.init
+document.addEventListener('DOMContentLoaded', () => {
+  _AppJsDefault.default.init();
+});

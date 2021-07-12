@@ -1,0 +1,102 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "gotoRoute", function () {
+  return gotoRoute;
+});
+_parcelHelpers.export(exports, "anchorRoute", function () {
+  return anchorRoute;
+});
+var _viewsPagesHome = require('./views/pages/home');
+var _viewsPagesHomeDefault = _parcelHelpers.interopDefault(_viewsPagesHome);
+var _viewsPages = require('./views/pages/404');
+var _viewsPagesDefault = _parcelHelpers.interopDefault(_viewsPages);
+var _viewsPagesSignin = require('./views/pages/signin');
+var _viewsPagesSigninDefault = _parcelHelpers.interopDefault(_viewsPagesSignin);
+var _viewsPagesSignup = require('./views/pages/signup');
+var _viewsPagesSignupDefault = _parcelHelpers.interopDefault(_viewsPagesSignup);
+var _viewsPagesProfile = require('./views/pages/profile');
+var _viewsPagesProfileDefault = _parcelHelpers.interopDefault(_viewsPagesProfile);
+var _viewsPagesEditProfile = require('./views/pages/editProfile');
+var _viewsPagesEditProfileDefault = _parcelHelpers.interopDefault(_viewsPagesEditProfile);
+var _viewsPagesGuide = require('./views/pages/guide');
+var _viewsPagesGuideDefault = _parcelHelpers.interopDefault(_viewsPagesGuide);
+var _viewsPagesFavouritePackages = require('./views/pages/favouritePackages');
+var _viewsPagesFavouritePackagesDefault = _parcelHelpers.interopDefault(_viewsPagesFavouritePackages);
+var _viewsPagesPackages = require('./views/pages/packages');
+var _viewsPagesPackagesDefault = _parcelHelpers.interopDefault(_viewsPagesPackages);
+var _viewsPagesNewPackage = require('./views/pages/newPackage');
+var _viewsPagesNewPackageDefault = _parcelHelpers.interopDefault(_viewsPagesNewPackage);
+var _viewsPagesUserDashboard = require('./views/pages/userDashboard');
+var _viewsPagesUserDashboardDefault = _parcelHelpers.interopDefault(_viewsPagesUserDashboard);
+var _viewsPagesOurStory = require('./views/pages/ourStory');
+var _viewsPagesOurStoryDefault = _parcelHelpers.interopDefault(_viewsPagesOurStory);
+var _viewsPagesFaqs = require('./views/pages/faqs');
+var _viewsPagesFaqsDefault = _parcelHelpers.interopDefault(_viewsPagesFaqs);
+var _viewsPagesTestimonies = require('./views/pages/testimonies');
+var _viewsPagesTestimoniesDefault = _parcelHelpers.interopDefault(_viewsPagesTestimonies);
+var _viewsPagesTravelTips = require('./views/pages/travelTips');
+var _viewsPagesTravelTipsDefault = _parcelHelpers.interopDefault(_viewsPagesTravelTips);
+var _viewsPagesFindus = require('./views/pages/findus');
+var _viewsPagesFindusDefault = _parcelHelpers.interopDefault(_viewsPagesFindus);
+var _viewsPagesAdmin = require('./views/pages/admin');
+var _viewsPagesAdminDefault = _parcelHelpers.interopDefault(_viewsPagesAdmin);
+// define routes
+const routes = {
+  '/': _viewsPagesHomeDefault.default,
+  '404': _viewsPagesDefault.default,
+  '/signin': _viewsPagesSigninDefault.default,
+  '/signup': _viewsPagesSignupDefault.default,
+  '/profile': _viewsPagesProfileDefault.default,
+  '/editProfile': _viewsPagesEditProfileDefault.default,
+  '/guide': _viewsPagesGuideDefault.default,
+  '/favouritePackages': _viewsPagesFavouritePackagesDefault.default,
+  '/packages': _viewsPagesPackagesDefault.default,
+  '/newPackage': _viewsPagesNewPackageDefault.default,
+  '/userDashboard': _viewsPagesUserDashboardDefault.default,
+  '/ourStory': _viewsPagesOurStoryDefault.default,
+  '/faqs': _viewsPagesFaqsDefault.default,
+  '/testimonies': _viewsPagesTestimoniesDefault.default,
+  '/travelTips': _viewsPagesTravelTipsDefault.default,
+  '/findus': _viewsPagesFindusDefault.default,
+  '/admin': _viewsPagesAdminDefault.default
+};
+class Router {
+  constructor() {
+    this.routes = routes;
+  }
+  init() {
+    // initial call
+    this.route(window.location.pathname);
+    // on back/forward
+    window.addEventListener('popstate', () => {
+      this.route(window.location.pathname);
+    });
+  }
+  route(fullPathname) {
+    // extract path without params
+    const pathname = fullPathname.split('?')[0];
+    const route = this.routes[pathname];
+    if (route) {
+      // if route exists, run init() of the view
+      this.routes[window.location.pathname].init();
+    } else {
+      // show 404 view instead
+      this.routes['404'].init();
+    }
+  }
+  gotoRoute(pathname) {
+    window.history.pushState({}, pathname, window.location.origin + pathname);
+    this.route(pathname);
+  }
+}
+// create appRouter instance and export
+const AppRouter = new Router();
+exports.default = AppRouter;
+function gotoRoute(pathname) {
+  AppRouter.gotoRoute(pathname);
+}
+function anchorRoute(e) {
+  e.preventDefault();
+  const pathname = e.target.closest('a').pathname;
+  AppRouter.gotoRoute(pathname);
+}
