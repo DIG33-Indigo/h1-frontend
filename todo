@@ -1,0 +1,28 @@
+UPDATING GIT ----------------------------------------
+git status
+git add .
+git commit
+git push origin main
+
+
+------- user funtions still not correct ---------
+Need to add code to divert users who hit a url which requires signin
+Need code to refresh page when user sign out
+
+
+    ---- package is a reserved word? -----
+    ${this.packages == null ? html`
+          <sl-spinner></sl-spinner>
+        ` : html`
+          ${this.packages.map(package => html `
+              <td-packages class="package-card"
+                  title="${package.title}"
+                  description="${package.description}"
+                  price=${package.price}
+                  image="${package.image}"
+                >
+            </td-packages>
+          `)}
+        `}
+
+
