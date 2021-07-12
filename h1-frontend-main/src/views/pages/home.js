@@ -95,6 +95,33 @@ class HomeView {
     </div>
   </div><!--close home quiz section div-->
 
+          
+  <!-- section 5 - instagram grid of pictures -->
+  <div id = "home-grid-section">
+    <h2>#topdecktravel</h2>
+    <!-- image grid below-->
+    <div id = "home-grid">
+      <!-- include instagram images below -->
+      <div class="img-gallery">
+        <!-- dummy content -->
+        <img src = "images/squareImg.jpg">
+        <img src = "images/squareImg.jpg">
+        <img src = "images/squareImg.jpg">
+        <img src = "images/squareImg.jpg">
+        <img src = "images/squareImg.jpg">
+        <img src = "images/squareImg.jpg">
+        <img src = "images/squareImg.jpg"> 
+        <img src = "images/squareImg.jpg">
+        <img src = "images/squareImg.jpg">
+        <img src = "images/squareImg.jpg">
+        <img src = "images/squareImg.jpg">
+        <img src = "images/squareImg.jpg">
+      </div>
+    </div>
+
+  </div><!-- close home grid section-->
+
+
 
           
         </div>

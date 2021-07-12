@@ -299,6 +299,36 @@ figure {
   cursor: pointer;
 }
 
+/*secton 5 - grid images
+--------------------------*/
+#home-grid-section {
+  height: 90vh;
+  background-color: #FFF;
+}
+
+#home-grid-section h2 {
+  color: #222C39;
+  font-weight: bolder;
+  margin-top: 7vh;
+  font-size: 10vh;
+  text-align: center;
+}
+
+.img-gallery {
+  margin-top: 6vh;
+  margin-left: 20vh;
+  margin-right: 20vh;
+  /*grid styling based off of
+  "Simple CSS Image Grid". 2021. Ehtmlu.Com. https://ehtmlu.com/blog/simple-css-image-grid/.*/
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.img-gallery img {
+  width: 100%;
+}
+
 .app-splash {
   position: fixed;
   background: #fff;
