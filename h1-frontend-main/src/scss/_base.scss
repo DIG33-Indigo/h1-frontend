@@ -33,11 +33,6 @@ h1,h2,h3,h5,h6 {
   font-weight: 300;
 } 
 
-body{
-  font-family: 'Open Sans', 'Times New Roman', Times, serif;
-  font-weight: 700;
-}
-
 
 #home-hero-section{
   background-image: url("./../../static/images/HOME-1.jpg");
@@ -56,12 +51,11 @@ body{
 
 #home-hero-text{
   position: relative;
-  padding-top: 45vh;
+  padding-top: 60vh;
 }
 
 #home-hero-text h3{
   font-size: 6vh;
-  padding-bottom: 2.8vh;
   text-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;;
 }
 #home-hero-text h1{
