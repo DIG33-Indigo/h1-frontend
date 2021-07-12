@@ -191,8 +191,56 @@ figure{
   justify-content: center;
 }
 
+/*Section 3 - feedback section 
+--------------------------*/
+#home-feedback-section{
+  height: 100vh;
+  background-color: #222C39;
+}
 
-// section 3 to go here --------------------------------------------
+#feedback-sm-container{
+  display: flex;
+  flex-direction: row;
+  /*puts all items across the centre*/
+  align-items: center;
+  justify-content: center;
+}
+
+#feedback-box{
+  width: 62vh;
+  margin-top: 20vh;
+}
+
+#feedback-box h1{
+ font-size: 13vh;
+ overflow-wrap:normal;
+}
+
+.highlight{
+  color: #F9DE7E;
+}
+/*vertical line in between flexbox items*/
+#vert-line{
+  margin-top: 20vh;
+  border-left: 5px solid #FFF;
+  height: 55vh;
+}
+
+/*left feedback box*/
+#feedback-box h2{
+  color: #FFF;
+  font-size: 7.8vh;
+  text-align: center;
+  margin-bottom: 5vh;
+}
+/*styles star img*/
+#feedback-box img{
+  width: 40vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 
 

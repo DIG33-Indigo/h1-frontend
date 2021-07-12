@@ -29,19 +29,20 @@ class HomeView {
         </div>
 
        <!-- section 2 popular tours -->
-<div id = "home-poptour-section">
-  <h1 id ="pop-h1">Popular Top Deck Tours:</h1>
+      <div id = "home-poptour-section">
+      <h1 id ="pop-h1">Popular Top Deck Tours:</h1>
 
-    <div class ="glider-contain multiple">
+      <div class ="glider-contain multiple">
       <!--slide in and out element-->
       <div class = "glider">
         <figure>
-          <div id = "bali-adventure" class = "slide">
+        <div id = "bali-adventure" class = "slide">
           <div class = "slider-txt">
           <h3>Bali Adventurer</h3>
             <h4>9 Nights | Departs Denpaser</h4>
             <div class = "slider-item"  id = "adv-slide">
             <span >#Adventure</span>
+          </div>
           </div>
         </div>
       </figure>
@@ -55,22 +56,37 @@ class HomeView {
             <div class = "slider-item" id = "chill-slide">
             <span>#Chill</span>
             </div>
-            </div>
-          </div>
+          </div>   
         </div>
       </figure>   
       </div>
+      </div>
        <!-- placeholder dots for now-->
-    <div id = "dots">
-      <sl-icon name = "circle"></sl-icon>
-      <sl-icon name = "circle"></sl-icon>
-      <sl-icon name = "circle"></sl-icon>
-      <sl-icon name = "circle"></sl-icon>
-      <sl-icon name = "circle"></sl-icon>
-    <!-- other slider divs go below -->
-  </div>
+      <div id = "dots">
+        <sl-icon name = "circle"></sl-icon>
+        <sl-icon name = "circle"></sl-icon>
+        <sl-icon name = "circle"></sl-icon>
+        <sl-icon name = "circle"></sl-icon>
+        <sl-icon name = "circle"></sl-icon>
+      </div>
+      <!-- other slider divs go below -->
+    </div>
 
-</div>
+      <!-- Section 3 travellers feedback-->
+    <div id = "home-feedback-section">
+    <div id = "feedback-sm-container">
+    <div id = "feedback-box">
+      <h1>What are our <span class = "highlight">travellers</span> saying?</h1>
+    </div>
+    <!--vertical line-->
+    <div id="vert-line"></div>
+    <div id = "feedback-box">
+     <h2><i>"I had the time of my life on the Eastern Europe Party Tour."</i></h2>
+      <img src = "images/5-stars.png" alt = "5 stars filled in yellow">
+    </div>
+  </div>
+  </div><!--close feedback div -->
+
 
           
         </div>
