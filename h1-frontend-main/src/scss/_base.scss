@@ -375,11 +375,12 @@ figure{
 
 // page --------------------
 .page-content {
-  position: absolute;
+  position: relative;
   top: var(--app-header-height);
   left: 0;
   right: 0;
   bottom: 0;
+  padding-bottom: 30px;
   overflow-y: scroll;
   //the padding here was removed as it was messing up the footer. Please only add
   //padding to elements and not globally Thanks! - Miriam

@@ -16,7 +16,6 @@ class HomeView {
     const template = html`
       <td-app-header title="Home" user=${JSON.stringify(Auth.currentUser)}></td-app-header>
       <div class="view-screen">
-      <body>
         <div id = "home-container">
         <!-- section 1 Hero image -->
           <div id = "home-hero-section">
@@ -125,7 +124,6 @@ class HomeView {
 
           
         </div>
-      </body>
       <td-site-footer></td-site-footer>
       </div>
 

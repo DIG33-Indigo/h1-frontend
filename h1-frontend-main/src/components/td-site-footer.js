@@ -34,7 +34,6 @@ customElements.define('td-site-footer', class SiteFooter extends LitElement {
 /*section - footer
 --------------------------*/
 footer{
-  position: fixed;
   width: 100%;
   bottom: 0;
   font-family: 'Roboto Condensed', 'Open Sans';   
