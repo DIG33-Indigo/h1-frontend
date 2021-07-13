@@ -4,6 +4,9 @@ git add .
 git commit
 git push origin main
 
+Getting GIT updates----------------------------------
+git pull
+
 
 ------- user funtions still not correct ---------
 Need to add code to divert users who hit a url which requires signin

@@ -42,7 +42,7 @@ customElements.define('td-site-footer', class SiteFooter extends LitElement {
 
 #footer-column-left,
 #footer-column-mid{
-    padding-top: 14vh;
+    padding-top: 3vh;
 }
 
 #footer-column-left,
