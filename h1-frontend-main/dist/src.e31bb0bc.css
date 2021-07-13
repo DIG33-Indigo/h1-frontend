@@ -54,6 +54,8 @@ h1, h2, h3, h5, h6 {
   font-weight: 300;
 }
 
+/*section 1 Home hero section
+--------------------------*/
 #home-hero-section {
   background-image: url("/HOME-1.14760647.jpg");
   background-position: center;
@@ -452,6 +454,43 @@ figure {
   max-width: 700px;
 }
 
+/* RESPONSIVE - TABLET SIZE
+------------------- */
+@media all and (max-width: 768px) {
+  /*HOME PAGE
+  --------------------------*/
+  /*section 1 Home hero section
+  --------------------------*/
+  #home-hero-text h3 {
+    font-size: 4vh;
+  }
+
+  #home-hero-text h1 {
+    font-size: 9vh;
+  }
+
+  /*section 2 Top Deck Tours 
+  --------------------------*/
+  #pop-h1 {
+    padding-top: 6vh;
+    font-size: 7vh;
+    padding-bottom: 0vh;
+  }
+
+  #med-reset,
+#bali-adventure {
+    height: 32vh;
+    width: 60vh;
+  }
+
+  .slider-txt h3 {
+    font-size: 5vh;
+  }
+
+  .slider-txt h4 {
+    font-size: 3vh;
+  }
+}
 sl-dialog::part(title) {
   font-weight: 500;
   font-size: 1.6em;

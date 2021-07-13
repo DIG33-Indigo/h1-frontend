@@ -136,14 +136,13 @@ footer{
 
           <div class = "footer-right-item" id = "footer-icon-holder">
           <!-- Topdeck icons -->
-          <sl-icon name="facebook"></sl-icon>
-          <sl-icon name="youtube"></sl-icon>
-          <sl-icon name="instagram"></sl-icon>
+            <sl-icon name="facebook"></sl-icon>
+            <sl-icon name="youtube"></sl-icon>
+            <sl-icon name="instagram"></sl-icon>
           <br>
-          <sl-icon name="twitter"></sl-icon>
-          <!--Note: couldn't find all the icons on shoelace - missing 2 icons as of now-->
-          <img src = "images/white-snapchat.png" alt = "snapchat" class = "footer-icon-img">
-          <img src = "images/white-tiktok.png" alt = "tiktok"  class = "footer-icon-img">
+            <img src = "images/white-tiktok.png" alt = "tiktok icon"  class = "footer-icon-img">
+            <img src = "images/white-snapchat.png" alt = "snapchat icon" class = "footer-icon-img">
+            <sl-icon name="twitter"></sl-icon>
           </div>
 
           

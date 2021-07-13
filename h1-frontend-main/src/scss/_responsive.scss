@@ -1,0 +1,40 @@
+ /* RESPONSIVE - TABLET SIZE
+------------------- */
+ @media all and (max-width: 768px){       
+        
+    /*HOME PAGE
+    --------------------------*/
+
+    /*section 1 Home hero section
+    --------------------------*/
+    #home-hero-text h3{
+    font-size: 4vh;
+    }
+    
+    #home-hero-text h1{
+    font-size: 9vh;
+    }
+
+    /*section 2 Top Deck Tours 
+    --------------------------*/
+    #pop-h1{
+        padding-top: 6vh;
+        font-size: 7vh;
+        padding-bottom: 0vh;
+    }
+
+    #med-reset,
+    #bali-adventure{
+    height: 32vh;
+    width: 60vh;
+    }
+
+    .slider-txt h3{
+    font-size: 5vh;
+    }
+      
+    .slider-txt h4{
+    font-size: 3vh; 
+    }
+
+  }
