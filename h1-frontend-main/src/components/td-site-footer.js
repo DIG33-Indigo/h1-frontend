@@ -78,7 +78,7 @@ footer{
     flex-wrap: wrap;
 }
 
-#footer-column-right img{
+#topdeck-logo-white{
     width: 40vh;
     padding-top: 9vh;
 }
@@ -90,6 +90,11 @@ footer{
 
 #footer-icon-holder{
     margin-left: 4vh;
+}
+
+.footer-icon-img{
+  width: 10vh;
+  margin: 1vh;
 }
 
 
@@ -126,7 +131,7 @@ footer{
         <div id = "footer-column-right" class = "footer-item">
           <!-- Topdeck logo -->
           <div class = "footer-right-item">
-            <img src = "images/topdeck-white.png" alt = "top deck logo in white">
+            <img src = "images/topdeck-white.png" alt = "top deck logo in white" id = "topdeck-logo-white">
           </div>
 
           <div class = "footer-right-item" id = "footer-icon-holder">
@@ -137,6 +142,8 @@ footer{
           <br>
           <sl-icon name="twitter"></sl-icon>
           <!--Note: couldn't find all the icons on shoelace - missing 2 icons as of now-->
+          <img src = "images/white-snapchat.png" alt = "snapchat" class = "footer-icon-img">
+          <img src = "images/white-tiktok.png" alt = "tiktok"  class = "footer-icon-img">
           </div>
 
           
