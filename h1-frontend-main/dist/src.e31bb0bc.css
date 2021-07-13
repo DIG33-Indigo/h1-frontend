@@ -490,6 +490,10 @@ figure {
   .slider-txt h4 {
     font-size: 3vh;
   }
+
+  .slider-item {
+    width: 20vh;
+  }
 }
 sl-dialog::part(title) {
   font-weight: 500;
